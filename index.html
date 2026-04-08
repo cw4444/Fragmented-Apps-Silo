@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single Source of Truth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Fragmented apps demo</p>
+          <h1>Single Source of Truth</h1>
+          <p class="lede">
+            A dead-simple aggregator that pulls action items from Slack, Trello, and
+            Drive into one prioritised list, so the user stops wasting half the morning
+            hunting for context.
+          </p>
+        </div>
+        <div class="stats">
+          <div>
+            <span>Sources</span>
+            <strong id="source-count">3</strong>
+          </div>
+          <div>
+            <span>Action items</span>
+            <strong id="action-count">0</strong>
+          </div>
+          <div>
+            <span>High priority</span>
+            <strong id="urgent-count">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Connected sources</h2>
+            <button id="refresh-btn">Refresh bridge</button>
+          </div>
+          <div id="sources" class="source-grid"></div>
+        </article>
+
+        <article class="panel big">
+          <div class="panel-head">
+            <h2>Unified action list</h2>
+            <span class="pill">Priority sorted</span>
+          </div>
+          <div id="actions" class="action-list"></div>
+        </article>
+      </section>
+
+      <section class="panel footer">
+        <div class="panel-head">
+          <h2>Today’s summary</h2>
+          <span class="pill subtle">One place to look</span>
+        </div>
+        <div id="summary" class="summary"></div>
+      </section>
+    </main>
+
+    <template id="source-template">
+      <article class="source-card">
+        <div class="source-top">
+          <strong></strong>
+          <span class="tag"></span>
+        </div>
+        <p></p>
+      </article>
+    </template>
+
+    <template id="action-template">
+      <article class="action-card">
+        <div class="action-top">
+          <strong></strong>
+          <span class="badge"></span>
+        </div>
+        <p class="context"></p>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
